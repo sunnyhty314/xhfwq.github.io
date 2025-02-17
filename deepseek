@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小黄服务器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #response {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Deepseek志欣特别版</h1>
+    <input type="text" id="userInput" placeholder="请输入您的问题">
+    <button onclick="simulateServerResponse()">提交</button>
+    <div id="response"></div>
+
+    <script>
+        function simulateServerResponse() {
+            const userInput = document.getElementById('userInput').value;
+            const responseDiv = document.getElementById('response');
+            responseDiv.innerHTML = "思考中...";
+            setTimeout(() => {
+                responseDiv.innerHTML = "服务器繁忙，请稍后再试";
+            }, 3000); // 模拟3秒的延迟
+        }
+    </script>
+</body>
+</html>
